@@ -8,3 +8,10 @@ module "redis_serverless" {
   vpc_cidr_block = module.network.vpc_cidr_block
   subnet_ids     = module.network.subnet_ids
 }
+
+module "redis_self_managed_cluster_on" {
+  source         = "../../modules/redis_self_managed_cluster_on"
+  vpc_id         = module.network.vpc_id
+  vpc_cidr_block = module.network.vpc_cidr_block
+  subnet_ids     = module.network.subnet_ids
+}
